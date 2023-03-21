@@ -1,12 +1,10 @@
-# SAS Grid Manager CLI and SASGSUB Macros
-           SAS version: SAS 9.4M6 SAS Grid Manager Hotfix E3N001,E3N001,E3Q016la
-                        E3Y006pt,E3Y008pt
+# SAS Grid Manager CLI and SASGSUB Macros for Windows
+           SAS version: SAS 9.4M7 SAS Grid Manager 
                         SAS® Workload Orchestrator Administration Utility,
-                        Version 9.4M6 (build date: Sep 17 2019  09:50:02)
+                        Version 9.4M7 (build date: Aug  5 2020 @ 20:18:50)
 
 Usage and Setup can be found in "SAS Grid and Gsub Macros 2019 SGM" powerpoint file
 
--Currently for Linux only, working on Windows version to be ready for end of Mar 2023.
 
 ## Macros for the SAS User Role
 - %mygsub %mygsubque - submit a .sas program with sasgsub to the default queue or a named queue
@@ -30,14 +28,14 @@ Usage and Setup can be found in "SAS Grid and Gsub Macros 2019 SGM" powerpoint f
 2. Edit ...SASCOMPUTECONFIGDIR.../Lev1/SASApp/appserver_autoexec_usermods.sas with code below for mygsub and CLI macros to work  
            change "Yourconfigdir" to your actual configuration directory and "sasgridswomasterhost" to your master host name.
 
-           %let gsconfigdir=/Yourconfigdir/Lev1/Applications/SASGridManagerClientUtility/9.4;   
+           %let gsconfigdir=Yourconfigdir/Lev1/Applications/SASGridManagerClientUtility/9.4;   
            %let gauconfigdir=/Yourconfigdir/Lev1/Applications/GridAdminUtility/;   
            %let mhost=sasgridswomasterhostname;   
            %let mport=8901;  
            
 - Be sure to update your sasgsub.cfg to not prompt for password
-- CLI macros assumes .authinfo file exist in user home directory  
--- Sample content of .authinfo file: default user sasdemo password {SAS002}1D57933958C580064BD3DCA81A33DFB2
+- CLI macros assumes _authinfo file exist in shared directory in folder of username 
+-- Sample content of _authinfo file: default user sasdemo password {SAS002}1D57933958C580064BD3DCA81A33DFB2
            
 ### SMC setup
 #### Enable xcmd, repeat for each server context desired, i.e. Server context = SASApp
