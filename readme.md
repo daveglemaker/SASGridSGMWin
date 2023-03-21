@@ -27,11 +27,13 @@ Usage and Setup can be found in "SAS Grid and Gsub Macros 2019 SGM" powerpoint f
     
 2. Edit ...SASCOMPUTECONFIGDIR.../Lev1/SASApp/appserver_autoexec_usermods.sas with code below for mygsub and CLI macros to work  
            change "Yourconfigdir" to your actual configuration directory and "sasgridswomasterhost" to your master host name.
+           if your home directory (~) isn't a shared location that all nodes can access then change to a shared location unique to each user, both options are below
 
            %let gsconfigdir=Yourconfigdir/Lev1/Applications/SASGridManagerClientUtility/9.4;   
            %let gauconfigdir=/Yourconfigdir/Lev1/Applications/GridAdminUtility/;   
            %let mhost=sasgridswomasterhostname;   
            %let mport=8901;  
+           %let authinfo=~_authinfo; * or ; %let authinfo=S:\myshared_dir\%sysget(USERNAME)\_authinfo;
            
 - Be sure to update your sasgsub.cfg to not prompt for password
 - CLI macros assumes _authinfo file exist in shared directory in folder of username 
