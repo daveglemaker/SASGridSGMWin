@@ -39,11 +39,11 @@ Usage and Setup can be found in "SAS Grid and Gsub Macros 2019 SGM" powerpoint f
 - CLI macros assumes _authinfo file exist in shared directory in folder of username 
 -- Sample content of _authinfo file: default user sasdemo password {SAS002}1D57933958C580064BD3DCA81A33DFB2
 -- They can do a onetime run of the below code (substituting in their password and the shared drive that matches what you put in the autoexec_usermods for %let authinfo=). Reruns needed if their password changes.
----options noxwait;
----data _null_;
----   x 'mkdir S:\myshared_dir\%USERNAME%';
----   x 'echo default user %USERNAME% password {SAS002}1D57933958C580064BD3DCA81A33DFB2 >> S:\myshared_dir\%USERNAME%\_authinfo"';
----run;
+options noxwait;
+data _null_;
+   x 'mkdir S:\myshared_dir\%USERNAME%';
+   x 'echo default user %USERNAME% password {SAS002}1D57933958C580064BD3DCA81A33DFB2 >> S:\myshared_dir\%USERNAME%\_authinfo"';
+run;
 
            
 ### SMC setup
