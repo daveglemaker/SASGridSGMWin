@@ -37,8 +37,11 @@ Usage and Setup can be found in "SAS Grid and Gsub Macros 2019 SGM" powerpoint f
            
 - Be sure to update your sasgsub.cfg to not prompt for password
 - CLI macros assumes _authinfo file exist in shared directory in folder of username 
--- Sample content of _authinfo file: default user sasdemo password {SAS002}1D57933958C580064BD3DCA81A33DFB2
--- They can do a onetime run of the below code (substituting in their password and the shared drive that matches what you put in the autoexec_usermods for %let authinfo=). Reruns needed if their password changes.
+-- Sample content of _authinfo file: 
+
+           default user sasdemo password {SAS002}1D57933958C580064BD3DCA81A33DFB2
+           
+They can do a onetime run of the below code (substituting in their password and the shared drive that matches what you put in the autoexec_usermods for %let authinfo=). Reruns needed if their password changes.
 
            options noxwait;
            data _null_;
